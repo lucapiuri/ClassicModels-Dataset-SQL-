@@ -1,6 +1,8 @@
 -- -----------------------------------------------------
--- In this file we first define the schemas, and then load the data in the tables
--- to define the relational database for the "Classic Models" dataset
+-- In this file we 
+-- - define the schema for each table
+-- - define the relationships between the tables
+-- - load the data in the tables
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
