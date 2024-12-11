@@ -1,6 +1,7 @@
 -- -----------------------------------------------------
 -- In this file we first define the schemas, and then load the data in the tables
 -- to define the relational database for the "Classic Models" dataset
+-- -----------------------------------------------------
 
 -- -----------------------------------------------------
 -- Schema ClassicModels
@@ -190,8 +191,13 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
 
-# ProductLines
-# ------------------------------------------------------------
+
+-- -----------------------------------------------------
+-- Loading the data in the tables
+-- -----------------------------------------------------
+
+-- ProductLines
+------------------------------------------------------------
 
 INSERT INTO `ProductLines` (`productLine`,`textDescription`,`htmlDescription`,`image`) VALUES ('Classic Cars','Attention car enthusiasts: Make your wildest car ownership dreams come true. Whether you are looking for classic muscle cars, dream sports cars or movie-inspired miniatures, you will find great choices in this category. These replicas feature superb attention to detail and craftsmanship and offer features such as working steering system, opening forward compartment, opening rear trunk with removable spare wheel, 4-wheel independent spring suspension, and so on. The models range in size from 1:10 to 1:24 scale and include numerous limited edition and several out-of-production vehicles. All models include a certificate of authenticity from their manufacturers and come fully assembled and ready for display in the home or office.',NULL,NULL);
 INSERT INTO `ProductLines` (`productLine`,`textDescription`,`htmlDescription`,`image`) VALUES ('Motorcycles','Our motorcycles are state of the art replicas of classic as well as contemporary motorcycle legends such as Harley Davidson, Ducati and Vespa. Models contain stunning details such as official logos, rotating wheels, working kickstand, front suspension, gear-shift lever, footbrake lever, and drive chain. Materials used include diecast and plastic. The models range in size from 1:10 to 1:50 scale and include numerous limited edition and several out-of-production vehicles. All models come fully assembled and ready for display in the home or office. Most include a certificate of authenticity.',NULL,NULL);
@@ -201,8 +207,8 @@ INSERT INTO `ProductLines` (`productLine`,`textDescription`,`htmlDescription`,`i
 INSERT INTO `ProductLines` (`productLine`,`textDescription`,`htmlDescription`,`image`) VALUES ('Trucks and Buses','The Truck and Bus models are realistic replicas of buses and specialized trucks produced from the early 1920s to present. The models range in size from 1:12 to 1:50 scale and include numerous limited edition and several out-of-production vehicles. Materials used include tin, diecast and plastic. All models include a certificate of authenticity from their manufacturers and are a perfect ornament for the home and office.',NULL,NULL);
 INSERT INTO `ProductLines` (`productLine`,`textDescription`,`htmlDescription`,`image`) VALUES ('Vintage Cars','Our Vintage Car models realistically portray automobiles produced from the early 1900s through the 1940s. Materials used include Bakelite, diecast, plastic and wood. Most of the replicas are in the 1:18 and 1:24 scale sizes, which provide the optimum in detail and accuracy. Prices range from $30.00 up to $180.00 for some special limited edition replicas. All models include a certificate of authenticity from their manufacturers and come fully assembled and ready for display in the home or office.',NULL,NULL);
 
-# Products
-# ------------------------------------------------------------
+-- Products
+-- ------------------------------------------------------------
 
 INSERT INTO `Products` (`productCode`,`productName`,`productLine`,`productScale`,`productVendor`,`productDescription`,`quantityInStock`,`buyPrice`,`MSRP`) VALUES ('S10_1678','1969 Harley Davidson Ultimate Chopper','Motorcycles','1:10','Min Lin Diecast','This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.','7933','48.81','95.7');
 INSERT INTO `Products` (`productCode`,`productName`,`productLine`,`productScale`,`productVendor`,`productDescription`,`quantityInStock`,`buyPrice`,`MSRP`) VALUES ('S10_1949','1952 Alpine Renault 1300','Classic Cars','1:10','Classic Metal Creations','Turnable front wheels; steering function; detailed interior; detailed engine; opening hood; opening trunk; opening doors; and detailed chassis.','7305','98.58','214.3');
@@ -315,8 +321,8 @@ INSERT INTO `Products` (`productCode`,`productName`,`productLine`,`productScale`
 INSERT INTO `Products` (`productCode`,`productName`,`productLine`,`productScale`,`productVendor`,`productDescription`,`quantityInStock`,`buyPrice`,`MSRP`) VALUES ('S72_1253','Boeing X-32A JSF','Planes','1:72','Motor City Art Classics','10 inches Wingspan with retractable landing gears.Comes with pilot','4857','32.77','49.66');
 INSERT INTO `Products` (`productCode`,`productName`,`productLine`,`productScale`,`productVendor`,`productDescription`,`quantityInStock`,`buyPrice`,`MSRP`) VALUES ('S72_3212','Pont Yacht','Ships','1:72','Unimax Art Galleries','Measures 38 inches Long x 33 3/4 inches High. Includes a stand. Many extras including rigging, long boats, pilot house, anchors, etc. Comes with 2 masts, all square-rigged','414','33.3','54.6');
 
-# Offices
-# ------------------------------------------------------------
+-- Offices
+-- ------------------------------------------------------------
 
 INSERT INTO `Offices` (`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`,`state`,`country`,`postalCode`,`territory`, `officeLocation`) VALUES ('1','San Francisco','+1 650 219 4782','100 Market Street','Suite 300','CA','USA','94080','NA', ST_GeomFromText('POINT(37.77493 -122.419416)', 4326));
 INSERT INTO `Offices` (`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`,`state`,`country`,`postalCode`,`territory`, `officeLocation`) VALUES ('2','Boston','+1 215 837 0825','1550 Court Place','Suite 102','MA','USA','02107','NA', ST_GeomFromText('POINT(42.358431 -71.059773)', 4326));
@@ -326,8 +332,8 @@ INSERT INTO `Offices` (`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`
 INSERT INTO `Offices` (`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`,`state`,`country`,`postalCode`,`territory`, `officeLocation`) VALUES ('6','Sydney','+61 2 9264 2451','5-11 Wentworth Avenue','Floor #2','NSW','Australia','2010','APAC', ST_GeomFromText('POINT(-33.859972 151.211111)', 4326));
 INSERT INTO `Offices` (`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`,`state`,`country`,`postalCode`,`territory`, `officeLocation`) VALUES ('7','London','+44 20 7877 2041','25 Old Broad Street','Level 7',NULL,'UK','EC2N 1HN','EMEA', ST_GeomFromText('POINT(51.500152 -0.126236)', 4326));
 
-# Employees
-# ------------------------------------------------------------
+-- Employees
+-- ------------------------------------------------------------
 
 INSERT INTO `Employees` (`employeeNumber`,`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo`,`jobTitle`) VALUES ('1002','Murphy','Diane','x5800','dmurphy@classicmodelcars.com','1',NULL,'President');
 INSERT INTO `Employees` (`employeeNumber`,`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo`,`jobTitle`) VALUES ('1056','Patterson','Mary','x4611','mpatterso@classicmodelcars.com','1','1002','VP Sales');
@@ -353,8 +359,8 @@ INSERT INTO `Employees` (`employeeNumber`,`lastName`,`firstName`,`extension`,`em
 INSERT INTO `Employees` (`employeeNumber`,`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo`,`jobTitle`) VALUES ('1625','Kato','Yoshimi','x102','ykato@classicmodelcars.com','5','1621','Sales Rep');
 INSERT INTO `Employees` (`employeeNumber`,`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo`,`jobTitle`) VALUES ('1702','Gerard','Martin','x2312','mgerard@classicmodelcars.com','4','1102','Sales Rep');
 
-# Customerss
-# ------------------------------------------------------------
+-- Customerss
+-- ------------------------------------------------------------
 
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('103','Atelier graphique','Schmitt','Carine ','40.32.2555','54, rue Royale',NULL,'Nantes',NULL,'44000','France','1370','21000',ST_GeomFromText('POINT(47.2168424 -1.5567445)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('112','Signal Gift Stores','King','Jean','7025551838','8489 Strong St.',NULL,'Las Vegas','NV','83030','USA','1166','71800',ST_GeomFromText('POINT(36.114646 -115.172816)', 4326));
@@ -459,8 +465,7 @@ INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`cont
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('447','Gift Ideas Corp.','Lewis','Dan','2035554407','2440 Pompton St.',NULL,'Glendale','CT','97561','USA','1323','49700',ST_GeomFromText('POINT(33.5386523 -112.1859866)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('448','Scandinavian Gift Ideas','Larsson','Martha','0695-34 6555','',NULL,'GÃƒÂ¶teborg',NULL,'S-844 67','Sweden','1504','116400',ST_GeomFromText('POINT(57.6969943 11.9865)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('450','The Sharp Gifts Warehouse','Frick','Sue','4085553659','3086 Ingle Ln.',NULL,'San Jose','CA','94217','USA','1165','77600',ST_GeomFromText('POINT(37.3393857 -121.8949555)', 4326));
-INSERT INTO `Customers`
-(`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('452','Mini Auto Werke','Mendel','Roland ','7675-3555','Kirchgasse 6',NULL,'Graz',NULL,'8010','Austria','1401','45300',ST_GeomFromText('POINT(47.070714 15.439504)', 4326));
+INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('452','Mini Auto Werke','Mendel','Roland ','7675-3555','Kirchgasse 6',NULL,'Graz',NULL,'8010','Austria','1401','45300',ST_GeomFromText('POINT(47.070714 15.439504)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('455','Super Scale Inc.','Murphy','Leslie','2035559545','567 North Pendale Street',NULL,'New Haven','CT','97823','USA','1286','95400',ST_GeomFromText('POINT(41.3081527 -72.9281577)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('456','Microscale Inc.','Choi','Yu','2125551957','5290 North Pendale Street','Suite 200','NYC','NY','10022','USA','1286','39800',ST_GeomFromText('POINT(40.7143528 -74.0059731)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('458','Corrida Auto Replicas, Ltd','Sommer','Mart','(91) 555 22 82','C/ Araquil, 67',NULL,'Madrid',NULL,'28023','Spain','1702','104600',ST_GeomFromText('POINT(40.4166909 -3.7003454)', 4326));
@@ -480,8 +485,8 @@ INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`cont
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('495','Diecast Collectables','Franco','Valarie','6175552555','6251 Ingle Ln.',NULL,'Boston','MA','51003','USA','1188','85100',ST_GeomFromText('POINT(42.3584308 -71.0597732)', 4326));
 INSERT INTO `Customers` (`customerNumber`,`customerName`,`contactLastName`,`contactFirstName`,`phone`,`addressLine1`,`addressLine2`,`city`,`state`,`postalCode`,`country`,`salesRepEmployeeNumber`,`creditLimit`,`customerLocation`) VALUES ('496','Kelly\'s Gift Shop','Snowden','Tony','+64 9 5555500','Arenales 1938 3\'A\'',NULL,'Auckland  ',NULL,NULL,'New Zealand','1612','110000',ST_GeomFromText('POINT(-36.8484597 174.7633315)', 4326));
 
-# Orders
-# ------------------------------------------------------------
+-- Orders
+-- ------------------------------------------------------------
 
 INSERT INTO `Orders` (`orderNumber`,`orderDate`,`requiredDate`,`shippedDate`,`status`,`comments`,`customerNumber`) VALUES ('10100','2003-01-06 00:00:00','2003-01-13 00:00:00','2003-01-10 00:00:00','Shipped',NULL,'363');
 INSERT INTO `Orders` (`orderNumber`,`orderDate`,`requiredDate`,`shippedDate`,`status`,`comments`,`customerNumber`) VALUES ('10101','2003-01-09 00:00:00','2003-01-18 00:00:00','2003-01-11 00:00:00','Shipped','Check on availability.','128');
@@ -810,8 +815,8 @@ INSERT INTO `Orders` (`orderNumber`,`orderDate`,`requiredDate`,`shippedDate`,`st
 INSERT INTO `Orders` (`orderNumber`,`orderDate`,`requiredDate`,`shippedDate`,`status`,`comments`,`customerNumber`) VALUES ('10424','2005-05-31 00:00:00','2005-06-08 00:00:00',NULL,'In Process',NULL,'141');
 INSERT INTO `Orders` (`orderNumber`,`orderDate`,`requiredDate`,`shippedDate`,`status`,`comments`,`customerNumber`) VALUES ('10425','2005-05-31 00:00:00','2005-06-07 00:00:00',NULL,'In Process',NULL,'119');
 
-# OrderDetails
-# ------------------------------------------------------------
+-- OrderDetails
+-- ------------------------------------------------------------
 
 INSERT INTO `OrderDetails` (`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) VALUES ('10100','S18_1749','30','136','3');
 INSERT INTO `OrderDetails` (`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) VALUES ('10100','S18_2248','50','55.09','2');
@@ -3810,8 +3815,8 @@ INSERT INTO `OrderDetails` (`orderNumber`,`productCode`,`quantityOrdered`,`price
 INSERT INTO `OrderDetails` (`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) VALUES ('10425','S32_2509','11','50.32','6');
 INSERT INTO `OrderDetails` (`orderNumber`,`productCode`,`quantityOrdered`,`priceEach`,`orderLineNumber`) VALUES ('10425','S50_1392','18','94.92','2');
 
-# Payments
-# ------------------------------------------------------------
+-- Payments
+-- ------------------------------------------------------------
 
 INSERT INTO `Payments` (`customerNumber`,`checkNumber`,`paymentDate`,`amount`) VALUES ('103','HQ336336','2004-10-19 00:00:00','6066.78');
 INSERT INTO `Payments` (`customerNumber`,`checkNumber`,`paymentDate`,`amount`) VALUES ('103','JM555205','2003-06-05 00:00:00','14571.44');
