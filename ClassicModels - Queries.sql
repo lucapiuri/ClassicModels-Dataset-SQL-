@@ -34,8 +34,11 @@ where jobTitle = 'Sales Rep' OR jobTitle = 'Sales Representative'
 AND Offices.country in ('Spain', 'France', 'Italy');
 select * from Employee_Subset
 
+
 --@block
 -- Make another query to list the names and email addresses of those employees.
+select email from Employees JOIN Employee_Subset
+on Employees.employeeNumber = Employee_Subset.employeeNumber;
 
  
 --@block
